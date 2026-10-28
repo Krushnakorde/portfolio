@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p5bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#fb7185" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" fill="url(#p5bg)" rx="12"/>
+
+  <!-- Top bar -->
+  <rect width="600" height="40" fill="#1e293b" rx="12 12 0 0"/>
+  <circle cx="25" cy="20" r="6" fill="#ef4444"/>
+  <circle cx="45" cy="20" r="6" fill="#f59e0b"/>
+  <circle cx="65" cy="20" r="6" fill="#10b981"/>
+  <text x="300" y="25" fill="#fda4af" font-size="12" font-family="system-ui" text-anchor="middle" font-weight="bold">❤️ HealthPulse Fitness & Biometrics</text>
+
+  <!-- Phone Mockup Container in center -->
+  <g transform="translate(180, 50)">
+    <rect width="240" height="315" rx="20" fill="#020617" stroke="#e11d48" stroke-width="2"/>
+    <!-- Phone notch -->
+    <rect x="80" y="5" width="80" height="12" rx="6" fill="#1e293b"/>
+    
+    <!-- Heart rate display -->
+    <g transform="translate(20, 30)">
+      <rect width="200" height="90" rx="12" fill="url(#pulseGrad)"/>
+      <text x="15" y="25" fill="#ffffff" font-size="11" font-family="system-ui">HEART RATE</text>
+      <text x="15" y="60" fill="#ffffff" font-size="28" font-weight="bold" font-family="system-ui">72 bpm</text>
+      <text x="130" y="60" fill="#ffffff" font-size="20">💓</text>
+      <path d="M 15 75 Q 35 75 45 68 L 55 82 L 65 62 L 75 80 L 85 75 L 185 75" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Activity Rings / Metrics -->
+    <g transform="translate(20, 130)">
+      <rect width="95" height="85" rx="10" fill="#1e293b"/>
+      <text x="10" y="22" fill="#94a3b8" font-size="10" font-family="system-ui">Steps</text>
+      <text x="10" y="48" fill="#38bdf8" font-size="16" font-weight="bold" font-family="system-ui">9,420</text>
+      <text x="10" y="70" fill="#4ade80" font-size="9" font-family="system-ui">94% of Goal</text>
+    </g>
+    <g transform="translate(125, 130)">
+      <rect width="95" height="85" rx="10" fill="#1e293b"/>
+      <text x="10" y="22" fill="#94a3b8" font-size="10" font-family="system-ui">Calories</text>
+      <text x="10" y="48" fill="#fb923c" font-size="16" font-weight="bold" font-family="system-ui">640 kcal</text>
+      <text x="10" y="70" fill="#fbbf24" font-size="9" font-family="system-ui">Active Burn</text>
+    </g>
+
+    <!-- Workout Status -->
+    <g transform="translate(20, 225)">
+      <rect width="200" height="75" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="35" cy="38" r="18" fill="#f43f5e"/>
+      <text x="35" y="44" fill="#ffffff" font-size="16" text-anchor="middle">🏃</text>
+      <text x="65" y="32" fill="#f8fafc" font-size="11" font-weight="bold" font-family="system-ui">Morning Run</text>
+      <text x="65" y="48" fill="#94a3b8" font-size="10" font-family="system-ui">5.2 km • 28 mins</text>
+      <text x="65" y="62" fill="#34d399" font-size="9" font-family="system-ui">Pace: 5'23" /km</text>
+    </g>
+  </g>
+</svg>

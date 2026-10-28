@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p4bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="p4accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" fill="url(#p4bg)" rx="12"/>
+
+  <!-- Top bar -->
+  <rect width="600" height="40" fill="#334155" rx="12 12 0 0"/>
+  <circle cx="25" cy="20" r="6" fill="#ef4444"/>
+  <circle cx="45" cy="20" r="6" fill="#f59e0b"/>
+  <circle cx="65" cy="20" r="6" fill="#10b981"/>
+  <text x="300" y="25" fill="#fed7aa" font-size="12" font-family="system-ui" text-anchor="middle" font-weight="bold">🛍️ ShopWave E-Commerce</text>
+
+  <!-- Banner -->
+  <rect x="25" y="55" width="550" height="85" rx="8" fill="url(#p4accent)"/>
+  <text x="50" y="90" fill="#ffffff" font-size="18" font-weight="bold" font-family="system-ui">Summer Tech Drop 2026</text>
+  <text x="50" y="112" fill="#fff7ed" font-size="11" font-family="system-ui">Up to 40% off on developer peripherals & keycaps</text>
+
+  <!-- Product Item 1 -->
+  <g transform="translate(25, 155)">
+    <rect width="170" height="195" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+    <rect x="15" y="15" width="140" height="95" rx="6" fill="#0f172a"/>
+    <circle cx="85" cy="62" r="28" fill="#334155"/>
+    <text x="85" y="67" fill="#f97316" font-size="18" text-anchor="middle">⌨️</text>
+    <text x="15" y="130" fill="#f8fafc" font-size="11" font-weight="bold" font-family="system-ui">Mechanical Pro</text>
+    <text x="15" y="150" fill="#fb923c" font-size="13" font-weight="bold" font-family="system-ui">$129.99</text>
+    <rect x="15" y="160" width="140" height="24" rx="4" fill="#ea580c"/>
+    <text x="85" y="176" fill="#ffffff" font-size="10" font-weight="bold" font-family="system-ui" text-anchor="middle">Add to Cart</text>
+  </g>
+
+  <!-- Product Item 2 -->
+  <g transform="translate(215, 155)">
+    <rect width="170" height="195" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+    <rect x="15" y="15" width="140" height="95" rx="6" fill="#0f172a"/>
+    <circle cx="85" cy="62" r="28" fill="#334155"/>
+    <text x="85" y="67" fill="#38bdf8" font-size="18" text-anchor="middle">🎧</text>
+    <text x="15" y="130" fill="#f8fafc" font-size="11" font-weight="bold" font-family="system-ui">Studio ANC Headset</text>
+    <text x="15" y="150" fill="#fb923c" font-size="13" font-weight="bold" font-family="system-ui">$199.00</text>
+    <rect x="15" y="160" width="140" height="24" rx="4" fill="#ea580c"/>
+    <text x="85" y="176" fill="#ffffff" font-size="10" font-weight="bold" font-family="system-ui" text-anchor="middle">Add to Cart</text>
+  </g>
+
+  <!-- Cart / Checkout Summary -->
+  <g transform="translate(405, 155)">
+    <rect width="170" height="195" rx="8" fill="#0f172a" stroke="#f97316" stroke-width="1.5"/>
+    <text x="15" y="28" fill="#f8fafc" font-size="12" font-weight="bold" font-family="system-ui">Stripe Checkout</text>
+    <line x1="15" y1="40" x2="155" y2="40" stroke="#334155"/>
+    <text x="15" y="65" fill="#94a3b8" font-size="11" font-family="system-ui">Items (2):</text>
+    <text x="155" y="65" fill="#ffffff" font-size="11" font-family="system-ui" text-anchor="end">$328.99</text>
+    <text x="15" y="90" fill="#94a3b8" font-size="11" font-family="system-ui">Shipping:</text>
+    <text x="155" y="90" fill="#34d399" font-size="11" font-family="system-ui" text-anchor="end">FREE</text>
+    <text x="15" y="125" fill="#f8fafc" font-size="12" font-weight="bold" font-family="system-ui">Total:</text>
+    <text x="155" y="125" fill="#fb923c" font-size="14" font-weight="bold" font-family="system-ui" text-anchor="end">$328.99</text>
+    <rect x="15" y="150" width="140" height="32" rx="6" fill="#10b981"/>
+    <text x="85" y="170" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Instant Pay 💳</text>
+  </g>
+</svg>

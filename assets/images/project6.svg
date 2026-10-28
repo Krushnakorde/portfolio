@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p6bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="barActive" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="barComparing" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#be123c" />
+    </linearGradient>
+    <linearGradient id="barSorted" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" fill="url(#p6bg)" rx="12"/>
+
+  <!-- Top bar -->
+  <rect width="600" height="40" fill="#1e293b" rx="12 12 0 0"/>
+  <circle cx="25" cy="20" r="6" fill="#ef4444"/>
+  <circle cx="45" cy="20" r="6" fill="#f59e0b"/>
+  <circle cx="65" cy="20" r="6" fill="#10b981"/>
+  <text x="300" y="25" fill="#bae6fd" font-size="12" font-family="system-ui" text-anchor="middle" font-weight="bold">⚡ AlgoVisualizer - Sorting & Graph Sandbox</text>
+
+  <!-- Controls Header -->
+  <g transform="translate(25, 55)">
+    <rect width="550" height="45" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="15" y="10" width="90" height="26" rx="6" fill="#0284c7"/>
+    <text x="60" y="27" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Merge Sort</text>
+    <rect x="115" y="10" width="80" height="26" rx="6" fill="#334155"/>
+    <text x="155" y="27" fill="#94a3b8" font-size="11" font-family="system-ui" text-anchor="middle">Quicksort</text>
+    <rect x="205" y="10" width="70" height="26" rx="6" fill="#334155"/>
+    <text x="240" y="27" fill="#94a3b8" font-size="11" font-family="system-ui" text-anchor="middle">Dijkstra</text>
+    
+    <text x="380" y="28" fill="#94a3b8" font-size="11" font-family="monospace">Speed: 50ms</text>
+    <rect x="470" y="10" width="65" height="26" rx="6" fill="#10b981"/>
+    <text x="502" y="27" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">▶ Run</text>
+  </g>
+
+  <!-- Visualization Canvas with Bars -->
+  <g transform="translate(25, 115)">
+    <rect width="550" height="235" rx="8" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
+    
+    <!-- Bars array -->
+    <rect x="30" y="140" width="22" height="70" rx="3" fill="url(#barSorted)"/>
+    <rect x="60" y="120" width="22" height="90" rx="3" fill="url(#barSorted)"/>
+    <rect x="90" y="90" width="22" height="120" rx="3" fill="url(#barSorted)"/>
+    <rect x="120" y="160" width="22" height="50" rx="3" fill="url(#barActive)"/>
+    <rect x="150" y="60" width="22" height="150" rx="3" fill="url(#barActive)"/>
+    <rect x="180" y="40" width="22" height="170" rx="3" fill="url(#barComparing)"/>
+    <rect x="210" y="110" width="22" height="100" rx="3" fill="url(#barComparing)"/>
+    <rect x="240" y="75" width="22" height="135" rx="3" fill="url(#barActive)"/>
+    <rect x="270" y="130" width="22" height="80" rx="3" fill="url(#barActive)"/>
+    <rect x="300" y="50" width="22" height="160" rx="3" fill="url(#barActive)"/>
+    <rect x="330" y="150" width="22" height="60" rx="3" fill="url(#barActive)"/>
+    <rect x="360" y="100" width="22" height="110" rx="3" fill="url(#barActive)"/>
+    <rect x="390" y="80" width="22" height="130" rx="3" fill="url(#barActive)"/>
+    <rect x="420" y="30" width="22" height="180" rx="3" fill="url(#barActive)"/>
+    <rect x="450" y="170" width="22" height="40" rx="3" fill="url(#barActive)"/>
+    <rect x="480" y="125" width="22" height="85" rx="3" fill="url(#barActive)"/>
+
+    <!-- Legend -->
+    <rect x="30" y="15" width="12" height="12" rx="2" fill="#34d399"/>
+    <text x="48" y="25" fill="#94a3b8" font-size="10" font-family="system-ui">Sorted</text>
+    <rect x="100" y="15" width="12" height="12" rx="2" fill="#f43f5e"/>
+    <text x="118" y="25" fill="#94a3b8" font-size="10" font-family="system-ui">Comparing</text>
+    <rect x="185" y="15" width="12" height="12" rx="2" fill="#38bdf8"/>
+    <text x="203" y="25" fill="#94a3b8" font-size="10" font-family="system-ui">Unsorted</text>
+  </g>
+</svg>
