@@ -2,8 +2,8 @@ import docx
 from docx.shared import Inches, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT, WD_ALIGN_VERTICAL
-from docx.oxml import OxmlElement, parse_xml
-from docx.oxml.ns import nsdecls, qn
+from docx.oxml import parse_xml
+from docx.oxml.ns import nsdecls
 
 def set_cell_background(cell, fill_hex):
     tcPr = cell._tc.get_or_add_tcPr()
@@ -48,7 +48,7 @@ def create_document():
     title_run.font.name = 'Calibri'
     title_run.font.size = Pt(22)
     title_run.font.bold = True
-    title_run.font.color.rgb = RGBColor(0x02, 0x84, 0xC7) # Sky blue / Navy
+    title_run.font.color.rgb = RGBColor(0x02, 0x84, 0xC7)
 
     # Subtitle
     sub_p = doc.add_paragraph()
@@ -59,14 +59,15 @@ def create_document():
     sub_run.font.color.rgb = RGBColor(0x64, 0x74, 0x8B)
 
     # Student Info Table
-    info_table = doc.add_table(rows=4, cols=2)
+    info_table = doc.add_table(rows=5, cols=2)
     info_table.alignment = WD_TABLE_ALIGNMENT.CENTER
     info_table.autofit = False
 
     data = [
-        ("Student Name:", "[Your Full Name - e.g. Alex Rivera]"),
-        ("Student ID / Roll No:", "[Your University Roll Number]"),
-        ("Course / Department:", "B.S. in Computer Science / Web Application Development"),
+        ("Student Name:", "Krushna Bharat Korde"),
+        ("Course / Degree:", "Master of Computer Applications (MCA) — SPPU"),
+        ("College / Institute:", "G.E.S. R.H. Sapat College of Engineering, Nashik"),
+        ("Contact & Profiles:", "kkorde332@gmail.com | +91 9359799245 | github.com/Krushnakorde"),
         ("Submission Date:", "October 2026")
     ]
 
@@ -120,11 +121,11 @@ def create_document():
 
     # Section 1
     add_section_heading("Section 1:", "Project Overview & Core Objectives")
-    add_p("The primary objective of this project was to design, develop, and deploy a modern, responsive personal portfolio website that exhibits professional engineering standards, clean code architecture, and high visual polish. In accordance with the Part A instructions, the website fulfills all specified rubrics:")
+    add_p("The primary objective of this project was to design, develop, and deploy an industry-standard personal portfolio website for Krushna Bharat Korde, demonstrating advanced competence in full-stack engineering, responsive UI design, component modularity, and cloud database persistence. In accordance with the Part A instructions, the website fulfills all specified rubrics:")
     
     bullets_s1 = [
-        ("Home Page Integration: ", "Contains an engaging personal introduction accompanied by a custom profile photo strategically placed directly beside the introduction on desktop screens and cleanly stacked on mobile/tablet viewports."),
-        ("Comprehensive Content Sections: ", "Seamlessly incorporates dedicated sections for About (personal story, academic credentials, key engineering strengths), Skills (categorized proficiencies with interactive level meters), Projects (filterable showcase with modal architecture breakdowns), and Contact (direct details and interactive message form)."),
+        ("Home Page Integration: ", "Presents an engaging professional introduction alongside the student's authentic photo placed beside the introduction on desktop monitors and stacked seamlessly on tablet and mobile viewports."),
+        ("Comprehensive Content Sections: ", "Seamlessly incorporates dedicated sections for About (personal background, dual tabs for Commercial Experience & Education credentials), Skills (categorized into Frontend, Backend, and DevOps with animated level bars), Projects (interactive showcase featuring real commercial applications: TorqUp, SocietyFlux, Vistabills), and Contact (direct email copy, WhatsApp/phone, and form validation)."),
         ("Rich Animations: ", "Engineered dynamic visual transitions including floating keyframe effects, glowing ambient badges, smooth scroll-spy navigation, pulse badges, and interactive hover elevation states."),
         ("Modern Tailwind CSS Styling: ", "Utilized utility-first Tailwind CSS to establish a responsive, consistent design system featuring dark/light mode persistence and glassmorphism styling."),
         ("Cloud Database / Storage Integration: ", "Equipped with a unified storage engine supporting Supabase PostgreSQL cloud persistence with automatic client-side storage fallback for contact inquiries and an interactive visitor guestbook.")
@@ -161,12 +162,12 @@ def create_document():
     add_p("The application follows a structured, clean directory layout separating components, centralized configuration data, and static media assets:")
 
     sections_detail = [
-        ("Hero / Home Section: ", "Greets visitors with an animated status pill ('Available for Internships'), a prominent headline, an engaging developer introduction, interactive social links (GitHub, LinkedIn, Email), resume download CTA, and the profile photo encased in a glowing ring with floating skill badges."),
-        ("About Section: ", "Presents a two-column layout highlighting the student's academic background, developer philosophy, core software principles, and an education timeline with institution, dates, and GPA."),
-        ("Skills Section: ", "Organized into three interactive categories: Frontend Architecture, Backend & Cloud, and DevOps & Tooling, displaying proficiency bars with smooth CSS transitions."),
-        ("Projects Section: ", "Showcases 6 comprehensive technical projects with category filter tabs ('All', 'Full Stack', 'Frontend', 'AI & Tools'). Each project card features high-fidelity mockup illustrations, tags, GitHub repository links, live demo links, and a 'Details' button that launches an in-depth modal dialog."),
+        ("Hero / Home Section: ", "Greets visitors with an animated status pill ('MCA Student @ SPPU • Full Stack Dev @ V-Rise'), headline, introduction, direct social links (GitHub, LinkedIn, Email), a 'Download Resume' button triggering the authentic resume PDF, and Krushna's photo framed inside a glowing gradient ring."),
+        ("About Section (Commercial Experience & Education): ", "Presents a dual-tabbed timeline: Commercial experience at V-RISE INFOTECH PVT LTD and ICICI Bank, alongside academic credentials (MCA at SPPU with 9.00 SGPA, BA at SPPU, and Coding Ninjas certification)."),
+        ("Skills Section: ", "Organized into three interactive categories: Frontend Architecture (React.js, Next.js, TypeScript, React Native), Backend & APIs (Node.js, Express.js, MongoDB, MySQL, Socket.IO), and Tooling & DevOps (Docker, Nginx, WSL 2, Git, Vite)."),
+        ("Projects Section: ", "Showcases real commercial and academic applications including TorqUp (Offline-first utility with React Native and MongoDB), SocietyFlux (Community management with Socket.IO alerts), and Vistabills (Invoicing platform published on Google Play). Each project card features interactive modal dialogs with architecture breakdowns."),
         ("Visitor Guestbook & Database: ", "A functional interactive section where visitors can write feedback or messages. Demonstrates database CRUD operations (create, read) with instant list updates."),
-        ("Contact Section: ", "Provides a direct email card with a one-click 'Copy to Clipboard' utility, location card, and an interactive contact form with validation, error states, and submission toasts.")
+        ("Contact Section: ", "Provides direct email and phone/WhatsApp cards with one-click 'Copy to Clipboard' buttons, location card (Nashik, Maharashtra), and an interactive contact form with validation, error states, and submission toasts.")
     ]
     for bold_txt, norm_txt in sections_detail:
         p = doc.add_paragraph(style='List Bullet')
@@ -199,9 +200,9 @@ def create_document():
     add_p("Paste screenshots of the running portfolio into the designated boxes below, showing the desktop, tablet, and mobile layouts as required by the submission guidelines:")
 
     screenshot_boxes = [
-        ("Figure 5.1: Desktop View - Home Page (Introduction & Profile Photo Beside)", "Paste desktop screenshot here showing the Hero section, photo, navigation, and badges."),
-        ("Figure 5.2: Desktop View - Projects Showcase & Interactive Modal Details", "Paste screenshot here showing the project grid with filter pills and the open project details modal."),
-        ("Figure 5.3: Tablet View - About Section & Technical Skills Grid", "Paste tablet view screenshot (e.g., iPad/tablet dimension or browser inspect mode)."),
+        ("Figure 5.1: Desktop View - Home Page (Krushna's Introduction & Photo Beside)", "Paste desktop screenshot here showing the Hero section, photo, navigation, and badges."),
+        ("Figure 5.2: Desktop View - Featured Projects (TorqUp, SocietyFlux, Vistabills) & Modal Details", "Paste screenshot here showing the project grid with filter pills and the open project details modal."),
+        ("Figure 5.3: Tablet View - Commercial Experience & MCA Education Timeline", "Paste tablet view screenshot showing the dual-tabbed Experience & Education timeline."),
         ("Figure 5.4: Mobile View - Responsive Mobile Drawer & Stacked Layout", "Paste mobile phone screenshot showing the hamburger menu drawer and mobile layout."),
         ("Figure 5.5: Database & Contact Feature - Guestbook & Inquiries Form", "Paste screenshot of the Guestbook message submission and Contact form validation.")
     ]
@@ -252,13 +253,13 @@ def create_document():
 
     up2 = ucell.add_paragraph()
     up2.paragraph_format.space_after = Pt(4)
-    ur2 = up2.add_run("[ PASTE YOUR NETLIFY / VERCEL LINK HERE - e.g. https://alex-rivera-portfolio.netlify.app ]")
+    ur2 = up2.add_run("[ PASTE YOUR NETLIFY / VERCEL LINK HERE - e.g. https://krushna-korde-portfolio.netlify.app ]")
     ur2.font.bold = True
     ur2.font.size = Pt(12)
     ur2.font.color.rgb = RGBColor(0x02, 0x84, 0xC7)
 
     up3 = ucell.add_paragraph()
-    ur3 = up3.add_run("Hosting Platform: Netlify Drop / Vercel Cloud\nSSL Status: Active (HTTPS Encrypted)\nVerification: Verified functional on Chrome, Safari, Android/iOS mobile, and Incognito/Private browsing windows.")
+    ur3 = up3.add_run("Hosting Platform: Netlify Drop / Vercel Cloud\nSSL Status: Active (HTTPS Encrypted)\nGitHub Repository: https://github.com/Krushnakorde/\nVerification: Verified functional on Chrome, Safari, Android/iOS mobile, and Incognito/Private browsing windows.")
     ur3.font.size = Pt(9.5)
     ur3.font.color.rgb = RGBColor(0x47, 0x55, 0x69)
 
@@ -313,7 +314,7 @@ def create_document():
         r2.font.size = Pt(9.5)
 
     doc.save("Part_B_Portfolio_Writeup.docx")
-    print("Successfully generated Part_B_Portfolio_Writeup.docx")
+    print("Successfully generated Part_B_Portfolio_Writeup.docx for Krushna Bharat Korde")
 
 if __name__ == '__main__':
     create_document()

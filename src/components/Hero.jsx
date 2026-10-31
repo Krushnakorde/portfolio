@@ -67,12 +67,14 @@ export default function Hero() {
 
               <a
                 href={personal.resumeUrl}
-                download
+                target="_blank"
+                rel="noreferrer"
+                download="Krushna_Bharat_Korde_Resume.pdf"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all"
-                title="Download Alex's Resume"
+                title="Download Krushna's Resume"
               >
                 <Download className="w-4 h-4" />
-                <span>Resume / CV</span>
+                <span>Download Resume</span>
               </a>
             </div>
 
@@ -125,24 +127,24 @@ export default function Hero() {
                 <img
                   src={personal.avatar}
                   alt={personal.name}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
 
-              {/* Floating Badge 1: Top Right (React & Frontend) */}
+              {/* Floating Badge 1: Top Right (React & TypeScript) */}
               <div className="absolute -top-2 -right-2 glass-card px-3.5 py-1.5 rounded-2xl flex items-center gap-1.5 shadow-lg border border-sky-400/30 animate-float">
                 <Code2 className="w-4 h-4 text-sky-400" />
-                <span className="text-xs font-bold text-slate-800 dark:text-slate-200">React & Tailwind</span>
+                <span className="text-xs font-bold text-slate-800 dark:text-slate-200">TypeScript & React</span>
               </div>
 
-              {/* Floating Badge 2: Bottom Left (Full-Stack & Cloud) */}
+              {/* Floating Badge 2: Bottom Left (Node.js & MongoDB) */}
               <div className="absolute -bottom-3 -left-3 glass-card px-3.5 py-1.5 rounded-2xl flex items-center gap-1.5 shadow-lg border border-indigo-400/30 animate-float [animation-delay:2s]">
                 <Database className="w-4 h-4 text-indigo-400" />
-                <span className="text-xs font-bold text-slate-800 dark:text-slate-200">Full Stack & Cloud</span>
+                <span className="text-xs font-bold text-slate-800 dark:text-slate-200">Node.js & MongoDB</span>
               </div>
 
               {/* Floating Badge 3: Terminal / Code */}
-              <div className="absolute top-1/2 -left-6 -translate-y-1/2 glass-card p-2 rounded-xl shadow-lg border border-emerald-400/30 hidden sm:flex items-center justify-center animate-float [animation-delay:4s]">
+              <div className="absolute top-1/2 -left-6 -translate-y-1/2 glass-card p-2.5 rounded-xl shadow-lg border border-emerald-400/30 hidden sm:flex items-center justify-center animate-float [animation-delay:4s]">
                 <Terminal className="w-5 h-5 text-emerald-400" />
               </div>
 

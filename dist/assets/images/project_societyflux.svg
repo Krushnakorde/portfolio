@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="socBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="socAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="380" fill="url(#socBg)" rx="12"/>
+
+  <!-- Top bar -->
+  <rect width="600" height="40" fill="#1e293b" rx="12 12 0 0"/>
+  <circle cx="25" cy="20" r="6" fill="#ef4444"/>
+  <circle cx="45" cy="20" r="6" fill="#f59e0b"/>
+  <circle cx="65" cy="20" r="6" fill="#10b981"/>
+  <text x="300" y="25" fill="#f3e8ff" font-size="12" font-family="system-ui" text-anchor="middle" font-weight="bold">🏢 SocietyFlux - Smart Gated Community Platform</text>
+
+  <!-- Left Stats & Role selector -->
+  <g transform="translate(25, 55)">
+    <rect width="180" height="305" rx="10" fill="#1e1b4b" stroke="#4338ca" stroke-width="1.5"/>
+    <text x="18" y="28" fill="#e0e7ff" font-size="12" font-family="system-ui" font-weight="bold">Role-Based Access</text>
+
+    <!-- Roles -->
+    <rect x="15" y="42" width="150" height="28" rx="6" fill="#4f46e5"/>
+    <text x="25" y="60" fill="#ffffff" font-size="10" font-family="system-ui" font-weight="bold">👑 Society Admin</text>
+    <rect x="15" y="78" width="150" height="28" rx="6" fill="#312e81"/>
+    <text x="25" y="96" fill="#c7d2fe" font-size="10" font-family="system-ui">🛡️ Gate Security Guard</text>
+    <rect x="15" y="114" width="150" height="28" rx="6" fill="#312e81"/>
+    <text x="25" y="132" fill="#c7d2fe" font-size="10" font-family="system-ui">🏡 Resident Flat Owner</text>
+
+    <!-- Real-time Socket.IO Pill -->
+    <rect x="15" y="160" width="150" height="50" rx="8" fill="#0f172a" stroke="#6366f1" stroke-width="1"/>
+    <text x="25" y="180" fill="#a5b4fc" font-size="9" font-family="system-ui">Socket.IO Live Feed</text>
+    <circle cx="28" cy="195" r="4" fill="#10b981"/>
+    <text x="38" y="198" fill="#4ade80" font-size="9" font-family="monospace">Connected (0ms lag)</text>
+
+    <!-- Summary Metrics -->
+    <rect x="15" y="222" width="70" height="60" rx="6" fill="#1e1b4b" stroke="#3730a3" stroke-width="1"/>
+    <text x="22" y="242" fill="#94a3b8" font-size="8" font-family="system-ui">Flats</text>
+    <text x="22" y="265" fill="#f8fafc" font-size="16" font-family="system-ui" font-weight="bold">320</text>
+
+    <rect x="95" y="222" width="70" height="60" rx="6" fill="#1e1b4b" stroke="#3730a3" stroke-width="1"/>
+    <text x="102" y="242" fill="#94a3b8" font-size="8" font-family="system-ui">Today's Visits</text>
+    <text x="102" y="265" fill="#a855f7" font-size="16" font-family="system-ui" font-weight="bold">84</text>
+  </g>
+
+  <!-- Right Real-time Visitor Stream Table -->
+  <g transform="translate(220, 55)">
+    <rect width="355" height="305" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#f8fafc" font-size="12" font-family="system-ui" font-weight="bold">Live Visitor Entry Logs (Real-time Broadcast)</text>
+    
+    <!-- Table Header -->
+    <rect x="15" y="42" width="325" height="26" rx="4" fill="#1e293b"/>
+    <text x="25" y="58" fill="#94a3b8" font-size="9" font-family="system-ui" font-weight="bold">VISITOR</text>
+    <text x="125" y="58" fill="#94a3b8" font-size="9" font-family="system-ui" font-weight="bold">FLAT</text>
+    <text x="195" y="58" fill="#94a3b8" font-size="9" font-family="system-ui" font-weight="bold">STATUS</text>
+    <text x="275" y="58" fill="#94a3b8" font-size="9" font-family="system-ui" font-weight="bold">ACTION</text>
+
+    <!-- Row 1 -->
+    <rect x="15" y="76" width="325" height="42" rx="6" fill="#1e1b4b" stroke="#6366f1" stroke-width="1"/>
+    <text x="25" y="94" fill="#ffffff" font-size="10" font-family="system-ui" font-weight="bold">Amazon Delivery</text>
+    <text x="25" y="108" fill="#94a3b8" font-size="8" font-family="system-ui">OTP: 4920</text>
+    <text x="125" y="100" fill="#c7d2fe" font-size="10" font-family="system-ui">A-402</text>
+    <rect x="190" y="86" width="60" height="20" rx="10" fill="#065f46"/>
+    <text x="220" y="99" fill="#34d399" font-size="8" font-family="system-ui" font-weight="bold" text-anchor="middle">APPROVED</text>
+    <text x="285" y="100" fill="#38bdf8" font-size="9" font-family="system-ui">Gate #1</text>
+
+    <!-- Row 2 -->
+    <rect x="15" y="126" width="325" height="42" rx="6" fill="#1e293b"/>
+    <text x="25" y="144" fill="#ffffff" font-size="10" font-family="system-ui" font-weight="bold">Guest: Amit Sharma</text>
+    <text x="25" y="158" fill="#94a3b8" font-size="8" font-family="system-ui">MH-15-BB-3120</text>
+    <text x="125" y="150" fill="#cbd5e1" font-size="10" font-family="system-ui">B-104</text>
+    <rect x="190" y="136" width="60" height="20" rx="10" fill="#854d0e"/>
+    <text x="220" y="149" fill="#fde047" font-size="8" font-family="system-ui" font-weight="bold" text-anchor="middle">WAITING</text>
+    <text x="285" y="150" fill="#a855f7" font-size="9" font-family="system-ui">App Notif</text>
+
+    <!-- Row 3 -->
+    <rect x="15" y="176" width="325" height="42" rx="6" fill="#1e293b"/>
+    <text x="25" y="194" fill="#ffffff" font-size="10" font-family="system-ui" font-weight="bold">Plumber Service</text>
+    <text x="25" y="208" fill="#94a3b8" font-size="8" font-family="system-ui">Pre-approved</text>
+    <text x="125" y="200" fill="#cbd5e1" font-size="10" font-family="system-ui">C-601</text>
+    <rect x="190" y="186" width="60" height="20" rx="10" fill="#065f46"/>
+    <text x="220" y="199" fill="#34d399" font-size="8" font-family="system-ui" font-weight="bold" text-anchor="middle">INSIDE</text>
+    <text x="285" y="200" fill="#38bdf8" font-size="9" font-family="system-ui">Gate #2</text>
+
+    <!-- Bottom Socket Notification Banner -->
+    <g transform="translate(15, 230)">
+      <rect width="325" height="58" rx="8" fill="url(#socAccent)"/>
+      <text x="15" y="25" fill="#ffffff" font-size="11" font-family="system-ui" font-weight="bold">🔔 Instant Push Notification Sent</text>
+      <text x="15" y="44" fill="#fdf4ff" font-size="9" font-family="system-ui">Delivered to Resident Phone App via WebSockets & Firebase FCM</text>
+    </g>
+  </g>
+</svg>

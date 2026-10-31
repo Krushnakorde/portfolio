@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, CheckCircle2, Copy, Check, MessageSquare, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, CheckCircle2, Copy, Check, MessageSquare, AlertCircle, Github, Linkedin } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { storageService } from '../config/supabase';
 
@@ -14,6 +14,7 @@ export default function Contact() {
   });
 
   const [copied, setCopied] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -22,6 +23,12 @@ export default function Contact() {
     navigator.clipboard.writeText(personal.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(personal.phone);
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2500);
   };
 
   const handleChange = (e) => {
@@ -64,7 +71,7 @@ export default function Contact() {
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400">
-            Have a project in mind, an internship opportunity, or just want to discuss software engineering? My inbox is always open.
+            Have a project in mind, an opportunity, or want to discuss full-stack engineering? My inbox and phone are always open.
           </p>
         </div>
 
@@ -72,48 +79,95 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column: Direct Contact Info (5 cols) */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-4">
             
             {/* Direct Email Card */}
-            <div className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-500 flex items-center justify-center">
-                <Mail className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-base font-bold text-slate-900 dark:text-white">Email Address</h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">Feel free to reach out anytime</p>
-                <div className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
-                  <span className="text-xs sm:text-sm font-mono text-slate-800 dark:text-slate-200 truncate">
-                    {personal.email}
-                  </span>
-                  <button
-                    onClick={handleCopyEmail}
-                    className="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
-                    title="Copy to clipboard"
-                  >
-                    {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
-                  </button>
+            <div className="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center">
+                  <Mail className="w-5 h-5" />
                 </div>
+                <div>
+                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">Email Address</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Direct personal inbox</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                <span className="text-xs sm:text-sm font-mono text-slate-800 dark:text-slate-200 truncate">
+                  {personal.email}
+                </span>
+                <button
+                  onClick={handleCopyEmail}
+                  className="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
+                  title="Copy email to clipboard"
+                >
+                  {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
+                </button>
+              </div>
+            </div>
+
+            {/* Direct Phone Card */}
+            <div className="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">Phone / WhatsApp</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Calls & WhatsApp messaging</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                <span className="text-xs sm:text-sm font-mono text-slate-800 dark:text-slate-200 truncate">
+                  {personal.phone}
+                </span>
+                <button
+                  onClick={handleCopyPhone}
+                  className="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
+                  title="Copy phone to clipboard"
+                >
+                  {copiedPhone ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
+                </button>
               </div>
             </div>
 
             {/* Location Card */}
-            <div className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-6 h-6" />
+            <div className="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-slate-900 dark:text-white">Location</h3>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">{personal.location}</p>
+                <h3 className="text-sm font-bold text-slate-900 dark:text-white">Location</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400">{personal.location}</p>
               </div>
             </div>
 
-            {/* Response Time Badge */}
-            <div className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-3">
-              <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                <span className="font-semibold text-slate-900 dark:text-white">Quick Turnaround:</span> Typically replies within 24 hours.
-              </p>
+            {/* Social profiles card */}
+            <div className="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between">
+              <div>
+                <h3 className="text-sm font-bold text-slate-900 dark:text-white">Code & Network</h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400">GitHub & LinkedIn profiles</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={personal.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:text-sky-500 text-slate-700 dark:text-slate-300 transition-colors"
+                  title="GitHub Profile"
+                >
+                  <Github className="w-4 h-4" />
+                </a>
+                <a
+                  href={personal.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:text-sky-500 text-slate-700 dark:text-slate-300 transition-colors"
+                  title="LinkedIn Profile"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              </div>
             </div>
 
           </div>
@@ -131,7 +185,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-sm font-bold text-emerald-800 dark:text-emerald-200">Message Delivered!</h4>
                   <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-0.5">
-                    Thank you for reaching out. Your inquiry has been stored and I will get back to you shortly.
+                    Thank you for reaching out, Krushna will review your message and respond shortly.
                   </p>
                 </div>
               </div>
@@ -156,7 +210,7 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Jane Doe"
+                    placeholder="e.g. Rahul Sharma"
                     className="w-full px-4 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
                   />
                 </div>
@@ -170,7 +224,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="jane@example.com"
+                    placeholder="rahul@example.com"
                     className="w-full px-4 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
                   />
                 </div>
@@ -185,7 +239,7 @@ export default function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Internship opportunity / Collaboration inquiry"
+                  placeholder="Opportunity / Collaboration / Project Inquiry"
                   className="w-full px-4 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
                 />
               </div>
@@ -200,7 +254,7 @@ export default function Contact() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Share a brief overview of what you have in mind..."
+                  placeholder="Share a brief overview of your inquiry or message..."
                   className="w-full px-4 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none"
                 />
               </div>

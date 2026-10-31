@@ -3,16 +3,21 @@ import { X, ExternalLink, Github, CheckCircle2, Layers } from 'lucide-react';
 
 export default function ProjectModal({ project, onClose }) {
   useEffect(() => {
+    if (!project) return;
+
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
+    
+    const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = originalOverflow;
     };
-  }, [onClose]);
+  }, [project, onClose]);
 
   if (!project) return null;
 

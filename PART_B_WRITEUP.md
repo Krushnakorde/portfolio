@@ -3,19 +3,20 @@
 
 | Field | Details |
 | :--- | :--- |
-| **Student Name** | [Your Full Name - e.g., Alex Rivera] |
-| **Student ID / Roll No** | [Your University Roll Number] |
-| **Course / Department** | B.S. in Computer Science / Web Application Development |
+| **Student Name** | Krushna Bharat Korde |
+| **Course / Degree** | Master of Computer Applications (MCA) — SPPU |
+| **College / Institute** | G.E.S. R.H. Sapat College of Engineering, Nashik |
+| **Contact & Profiles** | kkorde332@gmail.com \| +91 9359799245 \| [github.com/Krushnakorde](https://github.com/Krushnakorde) \| [linkedin.com/in/kkorde332](https://linkedin.com/in/kkorde332) |
 | **Submission Date** | October 2026 |
 
 ---
 
 ## Section 1: Project Overview & Core Objectives
 
-The primary objective of this project was to design, develop, and deploy a modern, responsive personal portfolio website that exhibits professional engineering standards, clean code architecture, and high visual polish. In accordance with the Part A instructions, the website fulfills all specified rubrics:
+The primary objective of this project was to design, develop, and deploy an industry-standard personal portfolio website for **Krushna Bharat Korde**, demonstrating advanced competence in full-stack engineering, responsive UI design, component modularity, and cloud database persistence. In accordance with the Part A instructions, the website fulfills all specified rubrics:
 
-* **Home Page Integration**: Contains an engaging personal introduction accompanied by a custom profile photo strategically placed directly beside the introduction on desktop screens and cleanly stacked on mobile/tablet viewports.
-* **Comprehensive Content Sections**: Seamlessly incorporates dedicated sections for **About** (personal story, academic credentials, key engineering strengths), **Skills** (categorized proficiencies with interactive level meters), **Projects** (filterable showcase with modal architecture breakdowns), and **Contact** (direct details and interactive message form).
+* **Home Page Integration**: Presents an engaging professional introduction alongside the student's authentic photo placed beside the introduction on desktop monitors and stacked seamlessly on tablet and mobile viewports.
+* **Comprehensive Content Sections**: Seamlessly incorporates dedicated sections for **About** (personal background, dual tabs for Commercial Experience & Education credentials), **Skills** (categorized into Frontend, Backend, and DevOps with animated level bars), **Projects** (interactive showcase featuring real commercial applications: TorqUp, SocietyFlux, Vistabills), and **Contact** (direct email copy, WhatsApp/phone, and form validation).
 * **Rich Animations**: Engineered dynamic visual transitions including floating keyframe effects, glowing ambient badges, smooth scroll-spy navigation, pulse badges, and interactive hover elevation states.
 * **Modern Tailwind CSS Styling**: Utilized utility-first Tailwind CSS to establish a responsive, consistent design system featuring dark/light mode persistence and glassmorphism styling.
 * **Cloud Database / Storage Integration**: Equipped with a unified storage engine supporting Supabase PostgreSQL cloud persistence with automatic client-side storage fallback for contact inquiries and an interactive visitor guestbook.
@@ -40,12 +41,13 @@ The application follows a structured, clean directory layout separating componen
 
 ```
 Portfolio/
-├── index.html                  # HTML5 entry with meta tags & Google fonts
+├── index.html                  # HTML5 entry with meta tags, SEO & Google fonts
 ├── vite.config.js              # Vite configuration with relative base './'
 ├── tailwind.config.js          # Custom theme, keyframes, colors
 ├── public/
 │   ├── _redirects              # Netlify SPA routing rewrite rule
-│   └── assets/images/          # SVGs for profile & 6 project mockups
+│   ├── Krushna_Bharat_Korde_Resume.pdf  # Downloadable verified resume PDF
+│   └── assets/images/          # Real portrait photo & project mockups
 ├── src/
 │   ├── index.css               # Tailwind directives & glassmorphic utilities
 │   ├── main.jsx                # React DOM mount point
@@ -55,12 +57,12 @@ Portfolio/
 │   └── components/
 │       ├── Navbar.jsx          # Glassmorphic header with scroll-spy & drawer
 │       ├── Hero.jsx            # Introduction & photo beside, stats, CTA
-│       ├── About.jsx           # Bio, story, highlights & education timeline
+│       ├── About.jsx           # Bio, story, commercial experience & education tabs
 │       ├── Skills.jsx          # Categorized skills & proficiency meters
 │       ├── Projects.jsx        # Project filter tabs & interactive cards
 │       ├── ProjectModal.jsx    # Pop-up dialog for architecture & deep dive
 │       ├── Guestbook.jsx       # Interactive message wall (Database feature)
-│       ├── Contact.jsx         # Contact info & form with validation
+│       ├── Contact.jsx         # Email, phone/WhatsApp copy & contact form
 │       └── Footer.jsx          # Socials, quick links & back-to-top button
 └── dist/                       # Production output folder ready for Netlify Drop
 ```
@@ -80,9 +82,9 @@ Portfolio/
 
 > *Tip: Take screenshots of your running website in your browser or phone and paste them into these sections in `Part_B_Portfolio_Writeup.docx`.*
 
-* **Figure 5.1: Desktop View - Home Page (Introduction & Profile Photo Beside)**
-* **Figure 5.2: Desktop View - Projects Showcase & Interactive Modal Details**
-* **Figure 5.3: Tablet View - About Section & Technical Skills Grid**
+* **Figure 5.1: Desktop View - Home Page (Krushna's Introduction & Photo Beside)**
+* **Figure 5.2: Desktop View - Featured Projects (TorqUp, SocietyFlux, Vistabills) & Modal Details**
+* **Figure 5.3: Tablet View - Commercial Experience & MCA Education Timeline**
 * **Figure 5.4: Mobile View - Responsive Mobile Drawer & Stacked Layout**
 * **Figure 5.5: Database & Contact Feature - Guestbook & Inquiries Form**
 
@@ -93,10 +95,11 @@ Portfolio/
 The portfolio has been compiled for production and deployed on a high-availability cloud host (Netlify / Vercel), ensuring 24/7 global accessibility across all browsers and devices without server downtime.
 
 ### 🌐 LIVE DEPLOYED PORTFOLIO URL:
-**`[ PASTE YOUR NETLIFY / VERCEL LINK HERE - e.g. https://alex-rivera-portfolio.netlify.app ]`**
+**`[ PASTE YOUR NETLIFY / VERCEL LINK HERE - e.g. https://krushna-korde-portfolio.netlify.app ]`**
 
 * **Hosting Platform**: Netlify Drop / Vercel Cloud
 * **SSL Status**: Active (HTTPS Encrypted)
+* **GitHub Repository**: [https://github.com/Krushnakorde/](https://github.com/Krushnakorde/)
 * **Verification**: Verified functional on Chrome, Safari, Android/iOS mobile, and Incognito/Private browsing windows.
 
 ---

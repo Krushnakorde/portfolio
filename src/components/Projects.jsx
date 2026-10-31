@@ -144,10 +144,12 @@ export default function Projects() {
       </div>
 
       {/* Project Modal Preview */}
-      <ProjectModal
-        project={activeModalProject}
-        onClose={() => setActiveModalProject(null)}
-      />
+      {activeModalProject && (
+        <ProjectModal
+          project={activeModalProject}
+          onClose={() => setActiveModalProject(null)}
+        />
+      )}
     </section>
   );
 }
