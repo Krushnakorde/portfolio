@@ -6,7 +6,7 @@
 | **Student Name** | Krushna Bharat Korde |
 | **Course / Degree** | Master of Computer Applications (MCA) — SPPU |
 | **College / Institute** | G.E.S. R.H. Sapat College of Engineering, Nashik |
-| **Contact & Profiles** | kkorde332@gmail.com \| +91 9359799245 \| [github.com/Krushnakorde](https://github.com/Krushnakorde) \| [linkedin.com/in/kkorde332](https://linkedin.com/in/kkorde332) |
+| **Direct Contact** | krushnakorde0310@gmail.com \| +91 9359799245 \| [github.com/Krushnakorde/](https://github.com/Krushnakorde/) \| [linkedin.com/in/kkorde332](https://linkedin.com/in/kkorde332) |
 | **Submission Date** | October 2026 |
 
 ---
@@ -15,8 +15,8 @@
 
 The primary objective of this project was to design, develop, and deploy an industry-standard personal portfolio website for **Krushna Bharat Korde**, demonstrating advanced competence in full-stack engineering, responsive UI design, component modularity, and cloud database persistence. In accordance with the Part A instructions, the website fulfills all specified rubrics:
 
-* **Home Page Integration**: Presents an engaging professional introduction alongside the student's authentic photo placed beside the introduction on desktop monitors and stacked seamlessly on tablet and mobile viewports.
-* **Comprehensive Content Sections**: Seamlessly incorporates dedicated sections for **About** (personal background, dual tabs for Commercial Experience & Education credentials), **Skills** (categorized into Frontend, Backend, and DevOps with animated level bars), **Projects** (interactive showcase featuring real commercial applications: TorqUp, SocietyFlux, Vistabills), and **Contact** (direct email copy, WhatsApp/phone, and form validation).
+* **Home Page Integration**: Presents an engaging professional introduction alongside the student's authentic photo placed beside the introduction on desktop monitors and stacked seamlessly on tablet and mobile viewports. Includes a direct email CTA connecting visitors to `krushnakorde0310@gmail.com`.
+* **Comprehensive Content Sections**: Seamlessly incorporates dedicated sections for **About** (personal background, dual tabs for Commercial Experience at V-RISE INFOTECH & Education credentials at SPPU), **Skills** (categorized into Frontend, Backend, and DevOps with animated level bars), **Projects** (featuring live deployed applications: OSINT Cyber Fraud Framework and MediCare Healthcare Platform), and **Contact** (direct email copy, WhatsApp/phone, and form validation).
 * **Rich Animations**: Engineered dynamic visual transitions including floating keyframe effects, glowing ambient badges, smooth scroll-spy navigation, pulse badges, and interactive hover elevation states.
 * **Modern Tailwind CSS Styling**: Utilized utility-first Tailwind CSS to establish a responsive, consistent design system featuring dark/light mode persistence and glassmorphism styling.
 * **Cloud Database / Storage Integration**: Equipped with a unified storage engine supporting Supabase PostgreSQL cloud persistence with automatic client-side storage fallback for contact inquiries and an interactive visitor guestbook.
@@ -56,13 +56,13 @@ Portfolio/
 │   ├── data/portfolioData.js   # Centralized student information & project config
 │   └── components/
 │       ├── Navbar.jsx          # Glassmorphic header with scroll-spy & drawer
-│       ├── Hero.jsx            # Introduction & photo beside, stats, CTA
+│       ├── Hero.jsx            # Introduction & photo beside, stats, direct email CTA
 │       ├── About.jsx           # Bio, story, commercial experience & education tabs
 │       ├── Skills.jsx          # Categorized skills & proficiency meters
-│       ├── Projects.jsx        # Project filter tabs & interactive cards
+│       ├── Projects.jsx        # Project filter tabs & live application cards (OSINT, MediCare)
 │       ├── ProjectModal.jsx    # Pop-up dialog for architecture & deep dive
 │       ├── Guestbook.jsx       # Interactive message wall (Database feature)
-│       ├── Contact.jsx         # Email, phone/WhatsApp copy & contact form
+│       ├── Contact.jsx         # Direct email (krushnakorde0310@gmail.com), phone & form
 │       └── Footer.jsx          # Socials, quick links & back-to-top button
 └── dist/                       # Production output folder ready for Netlify Drop
 ```
@@ -83,10 +83,10 @@ Portfolio/
 > *Tip: Take screenshots of your running website in your browser or phone and paste them into these sections in `Part_B_Portfolio_Writeup.docx`.*
 
 * **Figure 5.1: Desktop View - Home Page (Krushna's Introduction & Photo Beside)**
-* **Figure 5.2: Desktop View - Featured Projects (TorqUp, SocietyFlux, Vistabills) & Modal Details**
-* **Figure 5.3: Tablet View - Commercial Experience & MCA Education Timeline**
+* **Figure 5.2: Desktop View - Live Featured Projects (OSINT Framework & MediCare Portal)**
+* **Figure 5.3: Tablet View - Commercial Experience @ V-Rise & MCA Education Timeline**
 * **Figure 5.4: Mobile View - Responsive Mobile Drawer & Stacked Layout**
-* **Figure 5.5: Database & Contact Feature - Guestbook & Inquiries Form**
+* **Figure 5.5: Database & Contact Feature - Direct Email (krushnakorde0310@gmail.com) & Guestbook**
 
 ---
 
@@ -99,7 +99,8 @@ The portfolio has been compiled for production and deployed on a high-availabili
 
 * **Hosting Platform**: Netlify Drop / Vercel Cloud
 * **SSL Status**: Active (HTTPS Encrypted)
-* **GitHub Repository**: [https://github.com/Krushnakorde/](https://github.com/Krushnakorde/)
+* **GitHub Repository**: [https://github.com/Krushnakorde/portfolio](https://github.com/Krushnakorde/portfolio)
+* **Direct Email Contact**: `krushnakorde0310@gmail.com`
 * **Verification**: Verified functional on Chrome, Safari, Android/iOS mobile, and Incognito/Private browsing windows.
 
 ---

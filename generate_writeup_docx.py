@@ -67,7 +67,7 @@ def create_document():
         ("Student Name:", "Krushna Bharat Korde"),
         ("Course / Degree:", "Master of Computer Applications (MCA) — SPPU"),
         ("College / Institute:", "G.E.S. R.H. Sapat College of Engineering, Nashik"),
-        ("Contact & Profiles:", "kkorde332@gmail.com | +91 9359799245 | github.com/Krushnakorde"),
+        ("Direct Contact:", "krushnakorde0310@gmail.com | +91 9359799245 | github.com/Krushnakorde/"),
         ("Submission Date:", "October 2026")
     ]
 
@@ -124,8 +124,8 @@ def create_document():
     add_p("The primary objective of this project was to design, develop, and deploy an industry-standard personal portfolio website for Krushna Bharat Korde, demonstrating advanced competence in full-stack engineering, responsive UI design, component modularity, and cloud database persistence. In accordance with the Part A instructions, the website fulfills all specified rubrics:")
     
     bullets_s1 = [
-        ("Home Page Integration: ", "Presents an engaging professional introduction alongside the student's authentic photo placed beside the introduction on desktop monitors and stacked seamlessly on tablet and mobile viewports."),
-        ("Comprehensive Content Sections: ", "Seamlessly incorporates dedicated sections for About (personal background, dual tabs for Commercial Experience & Education credentials), Skills (categorized into Frontend, Backend, and DevOps with animated level bars), Projects (interactive showcase featuring real commercial applications: TorqUp, SocietyFlux, Vistabills), and Contact (direct email copy, WhatsApp/phone, and form validation)."),
+        ("Home Page Integration: ", "Presents an engaging professional introduction alongside the student's authentic photo placed beside the introduction on desktop monitors and stacked seamlessly on tablet and mobile viewports. Includes a direct email CTA connecting visitors to krushnakorde0310@gmail.com."),
+        ("Comprehensive Content Sections: ", "Seamlessly incorporates dedicated sections for About (personal background, dual tabs for Commercial Experience at V-RISE INFOTECH & Education credentials at SPPU), Skills (categorized into Frontend, Backend, and DevOps with animated level bars), Projects (featuring live deployed applications: OSINT Cyber Fraud Framework and MediCare Healthcare Platform), and Contact (direct email copy, WhatsApp/phone, and form validation)."),
         ("Rich Animations: ", "Engineered dynamic visual transitions including floating keyframe effects, glowing ambient badges, smooth scroll-spy navigation, pulse badges, and interactive hover elevation states."),
         ("Modern Tailwind CSS Styling: ", "Utilized utility-first Tailwind CSS to establish a responsive, consistent design system featuring dark/light mode persistence and glassmorphism styling."),
         ("Cloud Database / Storage Integration: ", "Equipped with a unified storage engine supporting Supabase PostgreSQL cloud persistence with automatic client-side storage fallback for contact inquiries and an interactive visitor guestbook.")
@@ -162,12 +162,12 @@ def create_document():
     add_p("The application follows a structured, clean directory layout separating components, centralized configuration data, and static media assets:")
 
     sections_detail = [
-        ("Hero / Home Section: ", "Greets visitors with an animated status pill ('MCA Student @ SPPU • Full Stack Dev @ V-Rise'), headline, introduction, direct social links (GitHub, LinkedIn, Email), a 'Download Resume' button triggering the authentic resume PDF, and Krushna's photo framed inside a glowing gradient ring."),
-        ("About Section (Commercial Experience & Education): ", "Presents a dual-tabbed timeline: Commercial experience at V-RISE INFOTECH PVT LTD and ICICI Bank, alongside academic credentials (MCA at SPPU with 9.00 SGPA, BA at SPPU, and Coding Ninjas certification)."),
-        ("Skills Section: ", "Organized into three interactive categories: Frontend Architecture (React.js, Next.js, TypeScript, React Native), Backend & APIs (Node.js, Express.js, MongoDB, MySQL, Socket.IO), and Tooling & DevOps (Docker, Nginx, WSL 2, Git, Vite)."),
-        ("Projects Section: ", "Showcases real commercial and academic applications including TorqUp (Offline-first utility with React Native and MongoDB), SocietyFlux (Community management with Socket.IO alerts), and Vistabills (Invoicing platform published on Google Play). Each project card features interactive modal dialogs with architecture breakdowns."),
+        ("Hero / Home Section: ", "Greets visitors with an animated status pill ('Full Stack Developer @ V-Rise • MCA Scholar @ SPPU'), headline, introduction, direct email callout to krushnakorde0310@gmail.com, social links (GitHub, LinkedIn), verified resume PDF download, and Krushna's authentic photo framed inside a glowing accent container."),
+        ("About Section (Commercial Experience & Education): ", "Presents a dual-tabbed timeline: Commercial experience at V-RISE INFOTECH PVT LTD (Full Stack Developer, May 2024 – Present) and ICICI Bank, alongside academic credentials (MCA at SPPU with 9.00 SGPA, BA at SPPU, and Coding Ninjas certification)."),
+        ("Skills Section: ", "Organized into three interactive categories: Frontend Architecture (React.js, Next.js, TypeScript), Backend & APIs (Node.js, Express.js, MongoDB, MySQL, Socket.IO), and Tooling & DevOps (Docker, Nginx, WSL 2, Git, Vite, Vercel, Render)."),
+        ("Projects Section: ", "Showcases Krushna's live deployed projects: (1) OSINT Cyber Fraud Detection Framework (live at https://osint-fraud-framework.onrender.com/) and (2) MediCare Healthcare & Doctor Booking Platform (live at https://medicare-frontend-six-sigma.vercel.app/). Each card features direct links to live applications and modal architecture breakdowns."),
         ("Visitor Guestbook & Database: ", "A functional interactive section where visitors can write feedback or messages. Demonstrates database CRUD operations (create, read) with instant list updates."),
-        ("Contact Section: ", "Provides direct email and phone/WhatsApp cards with one-click 'Copy to Clipboard' buttons, location card (Nashik, Maharashtra), and an interactive contact form with validation, error states, and submission toasts.")
+        ("Contact Section: ", "Highlights direct email access to krushnakorde0310@gmail.com (with an 'Open in Email App' one-click mailto trigger and clipboard copy), phone/WhatsApp (+91 9359799245), and an interactive validated inquiry form.")
     ]
     for bold_txt, norm_txt in sections_detail:
         p = doc.add_paragraph(style='List Bullet')
@@ -201,10 +201,10 @@ def create_document():
 
     screenshot_boxes = [
         ("Figure 5.1: Desktop View - Home Page (Krushna's Introduction & Photo Beside)", "Paste desktop screenshot here showing the Hero section, photo, navigation, and badges."),
-        ("Figure 5.2: Desktop View - Featured Projects (TorqUp, SocietyFlux, Vistabills) & Modal Details", "Paste screenshot here showing the project grid with filter pills and the open project details modal."),
-        ("Figure 5.3: Tablet View - Commercial Experience & MCA Education Timeline", "Paste tablet view screenshot showing the dual-tabbed Experience & Education timeline."),
+        ("Figure 5.2: Desktop View - Live Featured Projects (OSINT Framework & MediCare Portal)", "Paste screenshot here showing the project grid with live Render and Vercel application links."),
+        ("Figure 5.3: Tablet View - Commercial Experience @ V-Rise & MCA Education Timeline", "Paste tablet view screenshot showing the dual-tabbed Experience & Education timeline."),
         ("Figure 5.4: Mobile View - Responsive Mobile Drawer & Stacked Layout", "Paste mobile phone screenshot showing the hamburger menu drawer and mobile layout."),
-        ("Figure 5.5: Database & Contact Feature - Guestbook & Inquiries Form", "Paste screenshot of the Guestbook message submission and Contact form validation.")
+        ("Figure 5.5: Database & Contact Feature - Direct Email (krushnakorde0310@gmail.com) & Guestbook", "Paste screenshot of the Guestbook message submission and Contact direct email card.")
     ]
 
     for label, placeholder in screenshot_boxes:
@@ -259,7 +259,7 @@ def create_document():
     ur2.font.color.rgb = RGBColor(0x02, 0x84, 0xC7)
 
     up3 = ucell.add_paragraph()
-    ur3 = up3.add_run("Hosting Platform: Netlify Drop / Vercel Cloud\nSSL Status: Active (HTTPS Encrypted)\nGitHub Repository: https://github.com/Krushnakorde/\nVerification: Verified functional on Chrome, Safari, Android/iOS mobile, and Incognito/Private browsing windows.")
+    ur3 = up3.add_run("Hosting Platform: Netlify Drop / Vercel Cloud\nSSL Status: Active (HTTPS Encrypted)\nGitHub Repository: https://github.com/Krushnakorde/portfolio\nDirect Email Contact: krushnakorde0310@gmail.com\nVerification: Verified functional on Chrome, Safari, Android/iOS mobile, and Incognito/Private browsing windows.")
     ur3.font.size = Pt(9.5)
     ur3.font.color.rgb = RGBColor(0x47, 0x55, 0x69)
 

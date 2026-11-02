@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="osintBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="osintAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="threatHigh" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="380" fill="url(#osintBg)" rx="12"/>
+
+  <!-- Top bar -->
+  <rect width="600" height="40" fill="#0f172a" rx="12 12 0 0"/>
+  <circle cx="25" cy="20" r="6" fill="#ef4444"/>
+  <circle cx="45" cy="20" r="6" fill="#f59e0b"/>
+  <circle cx="65" cy="20" r="6" fill="#10b981"/>
+  <rect x="180" y="10" width="240" height="20" rx="6" fill="#1e293b"/>
+  <text x="300" y="24" fill="#38bdf8" font-size="11" font-family="monospace" text-anchor="middle">osint-fraud-framework.onrender.com</text>
+
+  <!-- Left Sidebar: Investigation Modules -->
+  <g transform="translate(15, 50)">
+    <rect width="130" height="315" rx="8" fill="#090d16" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="15" y="25" fill="#38bdf8" font-size="11" font-family="system-ui" font-weight="bold">🛡️ OSINT FRAUD</text>
+    
+    <rect x="10" y="38" width="110" height="26" rx="5" fill="#1e293b"/>
+    <text x="18" y="55" fill="#67e8f9" font-size="9" font-family="system-ui" font-weight="bold">🔍 Threat Search</text>
+
+    <rect x="10" y="70" width="110" height="24" rx="5" fill="#0f172a"/>
+    <text x="18" y="86" fill="#94a3b8" font-size="9" font-family="system-ui">🌐 Domain Intel</text>
+
+    <rect x="10" y="98" width="110" height="24" rx="5" fill="#0f172a"/>
+    <text x="18" y="114" fill="#94a3b8" font-size="9" font-family="system-ui">💳 Fraud Analysis</text>
+
+    <rect x="10" y="126" width="110" height="24" rx="5" fill="#0f172a"/>
+    <text x="18" y="142" fill="#94a3b8" font-size="9" font-family="system-ui">📍 IP Geolocation</text>
+
+    <rect x="10" y="154" width="110" height="24" rx="5" fill="#0f172a"/>
+    <text x="18" y="170" fill="#94a3b8" font-size="9" font-family="system-ui">👤 Identity Trace</text>
+
+    <!-- Status pill at bottom -->
+    <rect x="10" y="275" width="110" height="28" rx="6" fill="#064e3b" stroke="#047857" stroke-width="1"/>
+    <circle cx="22" cy="289" r="4" fill="#10b981"/>
+    <text x="32" y="293" fill="#34d399" font-size="8.5" font-family="system-ui" font-weight="bold">ENGINE ACTIVE</text>
+  </g>
+
+  <!-- Top Search Bar / Target Input -->
+  <g transform="translate(155, 50)">
+    <rect width="430" height="42" rx="8" fill="#090d16" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="15" y="26" fill="#38bdf8" font-size="12" font-family="monospace">target: domain/ip/entity/hash --deep-scan</text>
+    <rect x="340" y="7" width="80" height="28" rx="6" fill="url(#osintAccent)"/>
+    <text x="380" y="25" fill="#ffffff" font-size="10" font-family="system-ui" font-weight="bold" text-anchor="middle">Scan ⚡</text>
+  </g>
+
+  <!-- Risk Score & Threat Gauge -->
+  <g transform="translate(155, 102)">
+    <!-- High Risk Card -->
+    <rect width="135" height="85" rx="8" fill="#1e1b4b" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="12" y="22" fill="#fca5a5" font-size="9" font-family="system-ui">FRAUD PROBABILITY</text>
+    <text x="12" y="55" fill="#ef4444" font-size="28" font-weight="bold" font-family="system-ui">88.4%</text>
+    <rect x="12" y="65" width="75" height="15" rx="4" fill="#7f1d1d"/>
+    <text x="50" y="76" fill="#fca5a5" font-size="8" font-family="system-ui" font-weight="bold" text-anchor="middle">HIGH THREAT</text>
+
+    <!-- Indicators Card -->
+    <g transform="translate(145, 0)">
+      <rect width="135" height="85" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+      <text x="12" y="22" fill="#94a3b8" font-size="9" font-family="system-ui">BLACKMARKS FOUND</text>
+      <text x="12" y="55" fill="#f59e0b" font-size="28" font-weight="bold" font-family="system-ui">14</text>
+      <text x="12" y="74" fill="#fbbf24" font-size="8.5" font-family="system-ui">Phishing / Malicious ASN</text>
+    </g>
+
+    <!-- Node Network / Graph Intel Card -->
+    <g transform="translate(290, 0)">
+      <rect width="140" height="85" rx="8" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+      <text x="12" y="22" fill="#67e8f9" font-size="9" font-family="system-ui">CONNECTED NODES</text>
+      <text x="12" y="55" fill="#38bdf8" font-size="28" font-weight="bold" font-family="system-ui">62</text>
+      <text x="12" y="74" fill="#34d399" font-size="8.5" font-family="system-ui">Cluster Correlation ✓</text>
+    </g>
+  </g>
+
+  <!-- Live Investigation Findings Table / Terminal Logs -->
+  <g transform="translate(155, 198)">
+    <rect width="430" height="167" rx="8" fill="#030712" stroke="#1e293b" stroke-width="1.5"/>
+    <rect x="0" y="0" width="430" height="26" rx="8 8 0 0" fill="#0f172a"/>
+    <text x="15" y="17" fill="#cbd5e1" font-size="10" font-family="system-ui" font-weight="bold">Live OSINT Threat Intelligence Stream & Correlation</text>
+
+    <text x="15" y="48" fill="#4ade80" font-size="9.5" font-family="monospace">[21:42:01] Target entity resolved: IP 185.220.101.42 (Anonymous Proxy/Tor)</text>
+    <text x="15" y="68" fill="#f87171" font-size="9.5" font-family="monospace">[21:42:03] ALERT: Matched in known cyber fraud repository (Confidence: 0.94)</text>
+    <text x="15" y="88" fill="#38bdf8" font-size="9.5" font-family="monospace">[21:42:05] Reverse Whois: 8 sibling domains registered with burner email</text>
+    <text x="15" y="108" fill="#fcd34d" font-size="9.5" font-family="monospace">[21:42:07] SSL Certificate SHA-256 fingerprint verified against fraud feed</text>
+    <text x="15" y="128" fill="#a78bfa" font-size="9.5" font-family="monospace">[21:42:09] Synthesizing comprehensive intelligence dossier report...</text>
+    
+    <rect x="15" y="140" width="130" height="20" rx="4" fill="#0284c7"/>
+    <text x="80" y="153" fill="#ffffff" font-size="8.5" font-family="system-ui" font-weight="bold" text-anchor="middle">Render Cloud Hosted ↗</text>
+  </g>
+</svg>

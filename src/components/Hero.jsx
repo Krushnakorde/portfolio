@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles, Terminal, Database, Code2 } from 'lucide-react';
+import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles, Terminal, Shield, Code2, ExternalLink } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Hero() {
@@ -47,22 +47,34 @@ export default function Hero() {
               {personal.bio}
             </p>
 
+            {/* Direct Email Callout Pill */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-sky-50 dark:bg-sky-950/80 border border-sky-200 dark:border-sky-800 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">
+              <Mail className="w-4 h-4 text-sky-500 flex-shrink-0" />
+              <span>Direct Email:</span>
+              <a
+                href={`mailto:${personal.email}`}
+                className="font-bold text-sky-600 dark:text-sky-400 hover:underline font-mono"
+              >
+                {personal.email}
+              </a>
+            </div>
+
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1">
               <a
                 href="#projects"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
               >
-                <span>Explore Projects</span>
+                <span>Live Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
               <a
-                href="#contact"
+                href={`mailto:${personal.email}`}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-base font-semibold text-slate-800 dark:text-slate-200 glass-card hover:bg-slate-200/60 dark:hover:bg-slate-800/80 transition-all border border-slate-300 dark:border-slate-700 transform hover:-translate-y-0.5"
               >
                 <Mail className="w-4 h-4 text-sky-500" />
-                <span>Contact Me</span>
+                <span>Email Me Directly</span>
               </a>
 
               <a
@@ -74,12 +86,12 @@ export default function Hero() {
                 title="Download Krushna's Resume"
               >
                 <Download className="w-4 h-4" />
-                <span>Download Resume</span>
+                <span>Resume / CV</span>
               </a>
             </div>
 
             {/* Social Connect Icons */}
-            <div className="flex items-center gap-4 pt-4 text-slate-600 dark:text-slate-400">
+            <div className="flex items-center gap-4 pt-3 text-slate-600 dark:text-slate-400">
               <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                 Connect:
               </span>
@@ -114,37 +126,46 @@ export default function Hero() {
 
           {/* Right Column: Photo of Yourself placed beside Introduction (5 cols on lg) */}
           <div className="lg:col-span-5 flex justify-center items-center relative">
-            <div className="relative w-72 sm:w-80 md:w-96 aspect-square group">
+            <div className="relative w-72 sm:w-80 md:w-88 aspect-[3/4] group">
               
               {/* Animated decorative gradient ring & glow */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-500 via-indigo-500 to-purple-500 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-glow" />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-sky-500 via-indigo-500 to-purple-500 blur-xl opacity-60 group-hover:opacity-90 transition-opacity animate-glow" />
               
               {/* Outer decorative ring border */}
-              <div className="absolute -inset-2 rounded-full border-2 border-dashed border-sky-400/40 dark:border-sky-400/30 animate-spin-slow pointer-events-none" />
+              <div className="absolute -inset-2 rounded-3xl border-2 border-dashed border-sky-400/40 dark:border-sky-400/30 animate-spin-slow pointer-events-none" />
 
-              {/* Photo Frame Container */}
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-slate-900 shadow-2xl bg-slate-900">
+              {/* Photo Frame Container (Portrait format showcasing mountain scenery) */}
+              <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl bg-slate-900">
                 <img
                   src={personal.avatar}
                   alt={personal.name}
-                  className="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
+                
+                {/* Subtle gradient overlay at bottom of photo for badge readability */}
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent pointer-events-none" />
+                
+                <div className="absolute bottom-3 left-3 right-3 text-center pointer-events-none">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white bg-slate-900/80 backdrop-blur-md border border-white/20">
+                    Krushna Bharat Korde
+                  </span>
+                </div>
               </div>
 
-              {/* Floating Badge 1: Top Right (React & TypeScript) */}
-              <div className="absolute -top-2 -right-2 glass-card px-3.5 py-1.5 rounded-2xl flex items-center gap-1.5 shadow-lg border border-sky-400/30 animate-float">
-                <Code2 className="w-4 h-4 text-sky-400" />
-                <span className="text-xs font-bold text-slate-800 dark:text-slate-200">TypeScript & React</span>
+              {/* Floating Badge 1: Top Right (OSINT & Security) */}
+              <div className="absolute -top-3 -right-3 glass-card px-3.5 py-1.5 rounded-2xl flex items-center gap-1.5 shadow-lg border border-sky-400/30 animate-float">
+                <Shield className="w-4 h-4 text-cyan-400" />
+                <span className="text-xs font-bold text-slate-800 dark:text-slate-200">OSINT & Fraud Intel</span>
               </div>
 
-              {/* Floating Badge 2: Bottom Left (Node.js & MongoDB) */}
+              {/* Floating Badge 2: Bottom Left (Full Stack @ V-Rise) */}
               <div className="absolute -bottom-3 -left-3 glass-card px-3.5 py-1.5 rounded-2xl flex items-center gap-1.5 shadow-lg border border-indigo-400/30 animate-float [animation-delay:2s]">
-                <Database className="w-4 h-4 text-indigo-400" />
-                <span className="text-xs font-bold text-slate-800 dark:text-slate-200">Node.js & MongoDB</span>
+                <Code2 className="w-4 h-4 text-indigo-400" />
+                <span className="text-xs font-bold text-slate-800 dark:text-slate-200">Full Stack @ V-Rise</span>
               </div>
 
               {/* Floating Badge 3: Terminal / Code */}
-              <div className="absolute top-1/2 -left-6 -translate-y-1/2 glass-card p-2.5 rounded-xl shadow-lg border border-emerald-400/30 hidden sm:flex items-center justify-center animate-float [animation-delay:4s]">
+              <div className="absolute top-1/3 -left-5 glass-card p-2 rounded-xl shadow-lg border border-emerald-400/30 hidden sm:flex items-center justify-center animate-float [animation-delay:4s]">
                 <Terminal className="w-5 h-5 text-emerald-400" />
               </div>
 

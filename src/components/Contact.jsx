@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, Send, CheckCircle2, Copy, Check, MessageSquare, AlertCircle, Github, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, CheckCircle2, Copy, Check, MessageSquare, AlertCircle, Github, Linkedin, ExternalLink } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { storageService } from '../config/supabase';
 
@@ -51,7 +51,7 @@ export default function Contact() {
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSubmitted(false), 7000);
     } catch (err) {
-      setErrorMsg('Could not save your message. Please try emailing me directly.');
+      setErrorMsg('Could not save your message. Please email directly at krushnakorde0310@gmail.com');
     } finally {
       setLoading(false);
     }
@@ -65,13 +65,16 @@ export default function Contact() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-sky-600 dark:text-sky-400 bg-sky-100/70 dark:bg-sky-950/70 border border-sky-300/40 dark:border-sky-800">
             <Mail className="w-3.5 h-3.5" />
-            <span>Let's Connect</span>
+            <span>Direct Communication</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400">
-            Have a project in mind, an opportunity, or want to discuss full-stack engineering? My inbox and phone are always open.
+            If you want to collaborate, discuss opportunities, or visit my work, feel free to email directly at{' '}
+            <a href={`mailto:${personal.email}`} className="text-sky-600 dark:text-sky-400 font-bold hover:underline font-mono">
+              {personal.email}
+            </a>.
           </p>
         </div>
 
@@ -81,40 +84,54 @@ export default function Contact() {
           {/* Left Column: Direct Contact Info (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
             
-            {/* Direct Email Card */}
-            <div className="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center">
-                  <Mail className="w-5 h-5" />
+            {/* Direct Email Card with One-click Open & Copy */}
+            <div className="glass-card p-6 rounded-3xl border-2 border-sky-500/40 dark:border-sky-500/30 shadow-lg space-y-4 bg-gradient-to-br from-sky-50/50 to-transparent dark:from-sky-950/30">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 rounded-2xl bg-sky-500 text-white flex items-center justify-center shadow-md shadow-sky-500/30">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-slate-900 dark:text-white">Email Krushna</h3>
+                    <p className="text-xs text-sky-600 dark:text-sky-400 font-semibold">Primary Contact Method</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">Email Address</h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Direct personal inbox</p>
-                </div>
+                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-800">
+                  Active
+                </span>
               </div>
-              <div className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
-                <span className="text-xs sm:text-sm font-mono text-slate-800 dark:text-slate-200 truncate">
+
+              <div className="flex items-center justify-between gap-2 p-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <span className="text-sm font-bold font-mono text-slate-900 dark:text-white truncate">
                   {personal.email}
                 </span>
                 <button
                   onClick={handleCopyEmail}
-                  className="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
+                  className="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors flex-shrink-0"
                   title="Copy email to clipboard"
                 >
                   {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
+
+              <a
+                href={`mailto:${personal.email}?subject=Contact%20via%20Portfolio`}
+                className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 shadow-md shadow-sky-500/25 transition-all hover:scale-[1.02] active:scale-95"
+              >
+                <Mail className="w-4 h-4" />
+                <span>Open in Email App ↗</span>
+              </a>
             </div>
 
-            {/* Direct Phone Card */}
+            {/* Direct Phone / WhatsApp Card */}
             <div className="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">Phone / WhatsApp</h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Calls & WhatsApp messaging</p>
+                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">Phone & WhatsApp</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Direct phone call or WhatsApp message</p>
                 </div>
               </div>
               <div className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
@@ -131,22 +148,16 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Location Card */}
-            <div className="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-5 h-5" />
-              </div>
-              <div>
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white">Location</h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400">{personal.location}</p>
-              </div>
-            </div>
-
-            {/* Social profiles card */}
+            {/* Location & Profiles */}
             <div className="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between">
-              <div>
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white">Code & Network</h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">GitHub & LinkedIn profiles</p>
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-slate-900 dark:text-white">Nashik, Maharashtra</h4>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400">India • Available for Remote/Hybrid</p>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <a
@@ -176,7 +187,7 @@ export default function Contact() {
           <div className="lg:col-span-7 glass-card p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
               <MessageSquare className="w-5 h-5 text-sky-500" />
-              <span>Send a Message</span>
+              <span>Leave a Direct Message</span>
             </h3>
 
             {submitted && (
@@ -185,7 +196,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-sm font-bold text-emerald-800 dark:text-emerald-200">Message Delivered!</h4>
                   <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-0.5">
-                    Thank you for reaching out, Krushna will review your message and respond shortly.
+                    Thank you for reaching out. Your inquiry has been stored, and Krushna will get back to you shortly.
                   </p>
                 </div>
               </div>
@@ -202,7 +213,7 @@ export default function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
-                    Full Name *
+                    Your Name *
                   </label>
                   <input
                     type="text"
@@ -216,7 +227,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
-                    Email Address *
+                    Your Email Address *
                   </label>
                   <input
                     type="email"
@@ -239,7 +250,7 @@ export default function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Opportunity / Collaboration / Project Inquiry"
+                  placeholder="Collaboration / Project / Career Inquiry"
                   className="w-full px-4 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
                 />
               </div>
@@ -254,7 +265,7 @@ export default function Contact() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Share a brief overview of your inquiry or message..."
+                  placeholder="Write your message here..."
                   className="w-full px-4 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none"
                 />
               </div>

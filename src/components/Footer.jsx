@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Code2, Heart, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowUp, Code2, Github, Linkedin, Mail } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Footer() {
@@ -24,7 +24,7 @@ export default function Footer() {
                 {personal.name}
               </p>
               <p className="text-xs text-slate-500 dark:text-slate-400">
-                Crafted with React, Tailwind CSS & Vite
+                Full Stack Developer • <a href={`mailto:${personal.email}`} className="text-sky-500 hover:underline">{personal.email}</a>
               </p>
             </div>
           </div>
@@ -35,7 +35,6 @@ export default function Footer() {
             <a href="#about" className="hover:text-sky-500 transition-colors">About</a>
             <a href="#skills" className="hover:text-sky-500 transition-colors">Skills</a>
             <a href="#projects" className="hover:text-sky-500 transition-colors">Projects</a>
-            <a href="#guestbook" className="hover:text-sky-500 transition-colors">Guestbook</a>
             <a href="#contact" className="hover:text-sky-500 transition-colors">Contact</a>
           </nav>
 
@@ -62,7 +61,7 @@ export default function Footer() {
             <a
               href={`mailto:${personal.email}`}
               className="p-2 rounded-xl text-slate-600 dark:text-slate-400 hover:text-sky-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              aria-label="Email Me"
+              aria-label="Email Me Directly"
             >
               <Mail className="w-4 h-4" />
             </a>
@@ -81,7 +80,7 @@ export default function Footer() {
 
         {/* Copyright strip */}
         <div className="mt-8 pt-6 border-t border-slate-200/60 dark:border-slate-800/60 text-center text-xs text-slate-500 dark:text-slate-400">
-          <p>© {new Date().getFullYear()} {personal.name}. All rights reserved. Open for collaboration and full-time/internship opportunities.</p>
+          <p>© {new Date().getFullYear()} {personal.name}. All rights reserved.</p>
         </div>
       </div>
     </footer>

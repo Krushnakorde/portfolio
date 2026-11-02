@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X, Code2, FileText } from 'lucide-react';
+import { Sun, Moon, Menu, X, Code2, Mail, FileText } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Navbar({ darkMode, setDarkMode }) {
@@ -11,7 +11,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'about', 'skills', 'projects', 'guestbook', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -36,7 +36,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
     { name: 'About', href: '#about', id: 'about' },
     { name: 'Skills', href: '#skills', id: 'skills' },
     { name: 'Projects', href: '#projects', id: 'projects' },
-    { name: 'Guestbook', href: '#guestbook', id: 'guestbook' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
@@ -59,8 +58,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               <Code2 className="w-5 h-5" />
             </div>
             <span className="font-extrabold tracking-tight">
-              {portfolioData.personal.name.split(' ')[0]}
-              <span className="text-sky-500">.dev</span>
+              Krushna<span className="text-sky-500">.dev</span>
             </span>
           </a>
 
@@ -70,7 +68,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               <a
                 key={link.id}
                 href={link.href}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                   activeSection === link.id
                     ? 'bg-white dark:bg-slate-900 text-sky-600 dark:text-sky-400 shadow-sm'
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
@@ -81,7 +79,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             ))}
           </nav>
 
-          {/* Right Actions: Dark Mode Toggle & Resume CTA */}
+          {/* Right Actions: Dark Mode Toggle & Direct Email CTA */}
           <div className="flex items-center gap-3">
             <button
               onClick={() => setDarkMode(!darkMode)}
@@ -92,11 +90,11 @@ export default function Navbar({ darkMode, setDarkMode }) {
             </button>
 
             <a
-              href="#contact"
+              href={`mailto:${portfolioData.personal.email}`}
               className="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 shadow-md shadow-sky-500/20 transition-all hover:scale-[1.02] active:scale-95"
             >
-              <FileText className="w-4 h-4" />
-              <span>Get in Touch</span>
+              <Mail className="w-4 h-4" />
+              <span>Email Me</span>
             </a>
 
             {/* Mobile Hamburger Button */}
@@ -120,9 +118,9 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 key={link.id}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`px-4 py-2.5 rounded-xl text-base font-medium transition-colors ${
+                className={`px-4 py-2.5 rounded-xl text-base font-semibold transition-colors ${
                   activeSection === link.id
-                    ? 'bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 font-semibold'
+                    ? 'bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 font-bold'
                     : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
               >
@@ -131,11 +129,11 @@ export default function Navbar({ darkMode, setDarkMode }) {
             ))}
             <div className="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
               <a
-                href="#contact"
+                href={`mailto:${portfolioData.personal.email}`}
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full text-center py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-indigo-600 shadow-md"
               >
-                Get in Touch
+                Email: {portfolioData.personal.email}
               </a>
             </div>
           </nav>
